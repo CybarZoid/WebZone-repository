@@ -1,0 +1,147 @@
+:root {
+    --text: #ffffff;
+    --background: #240924;
+    --primary-button: #e5e59a;
+    --secondary-button: #0c030c;
+    --accent: #9ae5e5;
+
+    --ff-Rubik: 'Rubik', sans-serif;
+    --ff-Roboto-Mono: 'Roboto Mono', monospace;
+}
+
+/* Utility */
+.text-color {
+    color: var(--text);
+}
+
+.background-color {
+    background-color: var(--background);
+}
+
+.accent-color {
+    color: var(--accent);
+}
+
+/* Composition */
+.flow > :where(:not(:first-child)) {
+    margin-top: 1em;
+}
+
+/* Block */
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: var(--ff-Roboto-Mono);
+}
+
+.wrapper {
+    width: min(90%, 35ch);
+    margin-inline: auto;
+}
+
+main {
+    padding-block: 1rem;
+}
+
+img {
+    border-radius: 50%;
+}
+
+textarea {
+    resize: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    /* width: 100%; */
+    max-width: 100%;
+    padding: .5rem 1rem;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--ff-Rubik);
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+textarea, input {
+    width: 100%;
+    outline: none;
+}
+
+span, .btns {
+    gap: .5rem;
+    display: flex;
+}
+
+button {
+    display: block;
+    width: 100%;
+}
+
+.icon::before {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.heart::before {
+    content: "\f004";
+    font: var(--fa-font-solid);
+}
+
+.retweet::before {
+    content: '\f079';
+    font: var(--fa-font-solid);
+}
+
+.bookmark::before {
+    content: '\f02e';
+    font: var(--fa-font-solid);
+}
+
+.delete::before {
+    content: '\f1f8';
+    font: var(--fa-font-solid);
+}
+
+i {
+    cursor: pointer;
+}
+
+.btns {
+    margin-inline: auto;
+}
+
+.btn-post {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    padding-block: .5rem;
+    border-radius: 5rem;
+}
+
+.liked {
+    color: red;
+}
+
+.retweeted {
+    color: limegreen;
+}
+
+.bookmarked {
+    color: var(--accent);
+}
+
+@media all and (min-width: 600px) {
+    .wrapper {
+        width: min(80%, 34ch);
+    }
+
+    body {
+        display: grid;
+        min-height: 100dvh;
+        place-items: center;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
